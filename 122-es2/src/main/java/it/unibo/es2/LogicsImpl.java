@@ -5,8 +5,10 @@ import java.util.Map;
 
 public class LogicsImpl implements Logics {
 	private final Map<Pair<Integer, Integer>, String> values;
+	private final int size;
 
-	public LogicsImpl(int size) {
+	public LogicsImpl(final int size) {
+		this.size = size;
 		this.values = new HashMap<>();
 		for(int i = 0; i < size; i++) {
 			for(int j = 0; j < size; j++) {
@@ -17,16 +19,16 @@ public class LogicsImpl implements Logics {
 	}
 
 	@Override
-	public String hit(int elem) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'hit'");
+	public String hit(Pair<Integer, Integer> pos) {
+		final String str = this.values.get(pos).equals("*") ? " " : "*";
+		this.values.replace(pos, str);
+		return str;
 	}
 
 	@Override
 	public boolean toQuit() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'toQuit'");
-	}
-
-	
+		final boolean result;
+		for (int i = 0; i < )
+		return result;
+	}	
 }

@@ -7,7 +7,7 @@ public interface Logics {
 	/**
 	 * @return the new value a button should show after being pressed
 	 */
-	String hit(int elem);
+	String hit(Pair<Integer, Integer> pos);
 
     /**
 	 * @return whether it is time to quit

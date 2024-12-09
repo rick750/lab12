@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class LogicsImpl implements Logics {
 	private final List<Integer> values;
 
-	public LogicsImpl(int size) {
+	public LogicsImpl(final int size) {
 		this.values = new ArrayList<>(Collections.nCopies(size, 0));
 	}
 
@@ -30,7 +30,7 @@ public class LogicsImpl implements Logics {
 	}
 
 	@Override
-	public int hit(int elem) {
+	public int hit(final int elem) {
 		this.values.set(elem, this.values.get(elem) + 1);
 		return this.values.get(elem);
 	}
