@@ -2,6 +2,7 @@ package it.unibo.es2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class LogicsImpl implements Logics {
 	private final List<List<Boolean>> values;
@@ -30,6 +31,16 @@ public class LogicsImpl implements Logics {
 
 	@Override
 	public boolean toQuit() {
-		
-	}	
+		return isAnyRowFull() || isAnyColFull();
+	}
+
+	private boolean isAnyRowFull() {
+		return this.values.stream().anyMatch(list -> list.stream().allMatch(l -> l));
+	}
+
+	private boolean isAnyColFull() {
+		return IntStream.range(0,this.values.size())
+		.anyMatch(index -> this.values.stream()
+		.allMatch(l -> l.get(index)));
+	}
 }
