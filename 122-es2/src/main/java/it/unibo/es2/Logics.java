@@ -5,9 +5,11 @@ import java.util.*;
 public interface Logics {
 
 	/**
+	 * @param pos the position of the
+	 * 
 	 * @return the new value a button should show after being pressed
 	 */
-	String hit(Pair<Integer, Integer> pos);
+	Boolean hit(Pair<Integer, Integer> pos);
 
     /**
 	 * @return whether it is time to quit
