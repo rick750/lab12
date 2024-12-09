@@ -9,7 +9,7 @@ public interface Logics {
 	 * 
 	 * @return the new value a button should show after being pressed
 	 */
-	Boolean hit(Pair<Integer, Integer> pos);
+	boolean hit(Pair<Integer, Integer> pos);
 
     /**
 	 * @return whether it is time to quit
