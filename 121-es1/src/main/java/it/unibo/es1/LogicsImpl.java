@@ -3,6 +3,7 @@ package it.unibo.es1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LogicsImpl implements Logics {
 	private final List<Integer> values;
@@ -23,7 +24,9 @@ public class LogicsImpl implements Logics {
 
 	@Override
 	public List<Boolean> enablings() {
-		return this.values().stream().map(elem -> elem > 0).toList(); 
+		return this.values().stream()
+			.map(elem -> elem > 0)
+			.toList(); 
 	}
 
 	@Override
@@ -35,7 +38,8 @@ public class LogicsImpl implements Logics {
 	@Override
 	public String result() {
 		return this.values.stream()
-			.;
+			.map(String::valueOf)
+			.collect(Collectors.joining("|","<<",">>"));
 	}
 
 	@Override
