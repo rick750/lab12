@@ -1,43 +1,32 @@
 package it.unibo.es2;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LogicsImpl implements Logics {
+	private final Map<Pair<Integer, Integer>, String> values;
 
-	@Override
-	public List<Boolean> enablings() {
-		// TODO Auto-generated method stub
-		return null;
+	public LogicsImpl(int size) {
+		this.values = new HashMap<>();
+		for(int i = 0; i < size; i++) {
+			for(int j = 0; j < size; j++) {
+				final Pair<Integer, Integer> pos = new Pair<>(i , j);
+				this.values.put(pos, " ");
+			}
+		}
 	}
 
 	@Override
-	public int hit(int elem) {
+	public String hit(int elem) {
 		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String result() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new UnsupportedOperationException("Unimplemented method 'hit'");
 	}
 
 	@Override
 	public boolean toQuit() {
 		// TODO Auto-generated method stub
-		return false;
+		throw new UnsupportedOperationException("Unimplemented method 'toQuit'");
 	}
 
-	@Override
-	public List<Integer> values() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }
